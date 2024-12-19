@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion des Cours{% endblock %}
+
+{% block body %}
+    <h1>Gestion des Cours</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.module) }}
+        {{ form_row(form.professeur) }}
+        {{ form_row(form.classes) }}
+        <button type="submit">Créer Cours</button>
+    {{ form_end(form) }}
+
+    <h2>Liste des Cours</h2>
+    <ul>
+        {% for cours in cours %}
+            <li>{{ cours.module }} - {{ cours.professeur.nom }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

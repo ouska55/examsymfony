@@ -1,0 +1,6 @@
+# config/routes.yaml
+admin_cours:
+  path: /admin/cours
+  controller: App\Controller\AdminController::gestionCours
+  requirements:
+    _role: "ROLE_ADMIN"
